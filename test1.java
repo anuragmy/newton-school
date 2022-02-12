@@ -9,9 +9,9 @@ public class test1 {
     }
 
     static void swap(int a, int b) {
-        int temp = a; // a -> 4, temp -> 4
-        a = b; // b-> 5, a->5,
-        b = temp;// b -> 4, temp -> 4
+        int temp = a; 
+        a = b; 
+        b = temp;
 
     }
 
