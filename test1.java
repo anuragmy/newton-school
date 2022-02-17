@@ -1,4 +1,72 @@
 public class test1 {
+    
+     // leetcode solution -
+     // https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+    
+     static int findLengthOfLCIS(int[] nums) {
+
+        int anchor = 0;
+        int result = 0;
+        int len = nums.length;
+        // loop through array
+        for (int i = 0; i < len; i++) {
+            if (i > 0 && nums[i - 1] > nums[i]) {
+                anchor = i;
+
+            }
+            result = Math.max(result, i - anchor + 1);
+        }
+
+        return result;
+    }
+
+    static void findMinOccourance(String s) {
+        HashMap<Character, Integer> hashmap = new HashMap();
+        for (int i = 0; i < s.length(); i++) {
+            char element = s.charAt(i); // a
+            if (hashmap.containsKey(element)) {
+                hashmap.put(element, hashmap.get(element) + 1);
+            }
+
+            else {
+                hashmap.put(element, 1);
+            }
+
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char element = s.charAt(i); // a
+            if (hashmap.get(element) == 1) {
+                System.out.println("this is the result: " + element);
+                break;
+            }
+        }
+
+    }
+
+    static void findOccWithArray(String s) {
+
+        // String s = "aaabbcccddeff";
+        int[] array = new int[26];
+
+        // creating our own hasmap
+        for (char character : s.toCharArray()) {
+            array[character - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char element = s.charAt(i); // a
+            if (array[element - 'a'] == 1) {
+                System.out.println("this is the result: " + element);
+                break;
+            }
+        }
+
+        // c [3 ,1 , , ,, ...]
+        // 0 1
+
+    }
+
 
     static void printArr(int[] a) {
         int len = a.length;
@@ -142,6 +210,9 @@ public class test1 {
         // qiuckSort(a, 0, len - 1);
         mergeSort(a, 0, len - 1);
         printArr(a);
+        String s = "aaabcccdeeff";
+        findMinOccourance(s);
+        findOccWithArray(s);
 
     }
 }
