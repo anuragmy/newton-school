@@ -82,6 +82,29 @@ public class test1 {
         b = temp;// b -> 4, temp -> 4
 
     }
+    
+     static void insetionSort(int[] a) {
+        int len = a.length;
+        for (int i = 1; i < len; i++) {
+            int j = i - 1; // j = 0, a[j] = 5
+            int current = a[i]; // 2
+
+            System.out.println(
+                    " iteration: " + i + " a[j]:" + a[j] + " " + " j: " + j + " " + "current:" + current);
+
+            while (j >= 0 && a[j] > current) {
+                a[j + 1] = a[j];
+                j--;
+            }
+
+            printArr(a);
+            a[j + 1] = current;
+
+        }
+
+    }
+
+
 
     static void selectionSort(int[] a) {
 
@@ -213,6 +236,21 @@ public class test1 {
         String s = "aaabcccdeeff";
         findMinOccourance(s);
         findOccWithArray(s);
+        
+      
+        // LinkedList<Integer> list = new LinkedList<>();
+
+        // System.out.println(a[8]);
+
+        Animals dog = new Animals("tom", 20);
+        Animals cat = new Animals("jerry", 13);
+        // dog.setName("tom");
+        dog.getName();
+        dog.getAge();
+        System.out.println();
+        // cat.setName("jerry");
+        cat.getName();
+        cat.getAge();
          // aaabbcddeff
          // {a:3, b:2, c:1, d:2, e:1, f:2} - hashmap
 
