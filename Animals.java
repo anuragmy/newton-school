@@ -3,7 +3,7 @@
 public class Animals {
 
     String name = "animal";
-    int age = 10;
+    int age = 11;
 
     Animals(String Name, int Age) {
         this.name = Name;
