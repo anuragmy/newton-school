@@ -1,0 +1,27 @@
+// https://leetcode.com/problems/valid-sudoku/
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+         
+     HashSet<String> present = new HashSet();
+        
+    for(int i=0;i<board.length;i++) {
+        for(int j=0;j<board.length;j++) {
+           
+            int current = board[i][j];
+            
+            if(current != '.') {
+                if(
+            !present.add(current + "row" + i) || // 1 found in row 
+            !present.add(current + "column" + j) ||
+            !present.add(current + "box" + i/3 + "-" + j/3)
+                )
+                    return false;
+            }
+            
+        }
+    }
+      
+        return true;
+      
+    }
+}
